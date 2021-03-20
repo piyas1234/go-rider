@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
+.home-container{
+    background-image:url('../../Image/Bg4.png');
+    min-height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+     
+}
+ 
+ .home-body{
+     justify-content: center; /* align horizontal */
+     align-items: center; 
+     position: relative;
+     top:200px;
+ }
+.card{
+    justify-content: center;  
+    align-items: center; 
+    box-shadow: 3px 3px 3px 5px gray;
+}
+@media(max-width:990px){
+    .home-container{
+        background-image:url('../../Image/Bg4.png');
+        min-height: 900px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+         
+    }
+    .go-card{
+        margin: 40px;
+    }
+    .home-body{
+        justify-content: center; /* align horizontal */
+        align-items: center; 
+        position: relative;
+        top:0px;
+    }
+}
+ 

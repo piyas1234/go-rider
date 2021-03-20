@@ -1,0 +1,27 @@
+ 
+.main{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:#B5EAF8;
+    min-height: 800px;
+}
+.main-row{
+    position: relative;
+    top:50px;
+}
+.form-container{
+    background-color:lavender;
+    padding:30px;
+    box-shadow: 3px 3px 3px 5px gray;
+}
+
+.map-container{
+    border: 3px solid gray;
+    box-shadow: 3px 3px 3px 5px rgba(45, 69, 122, 0.514);
+    min-height: 400px;
+}
+
+@media(max-width:800px){
+    .map-container{
+       margin-top: 50px;
+    }
+}

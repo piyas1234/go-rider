@@ -3,16 +3,13 @@ Author : Piyas Talukder
 
 ===========================
 
-- [Live Site](https://lucid-bohr-f7f209.netlify.app/)
-- [Github Link](https://github.com/Porgramming-Hero-web-course/react-router-piyas1234)
+- [Live Site](https://go-riders-67527.web.app/)
+- [Github Link](https://github.com/Porgramming-Hero-web-course/react-auth-piyas1234)
  
 
 About project:
-
-- [API All TEAM](https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League)
-- [API SEARCH BY ID](https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=133604)
-- this project is about Sports 
-- in this project has team information with details
+ 
+- this project is about ride place 
 
 
 More information:

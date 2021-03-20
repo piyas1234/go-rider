@@ -66,12 +66,7 @@ const SearchResult = (props) => {
                     </div>
                 </div>
 
-
-
-
-
-
-
+ 
             </div>
         </div>
     );

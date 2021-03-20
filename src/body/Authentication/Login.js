@@ -9,6 +9,7 @@ import { firebaseConfig, socialLoin, emailLogin } from './firebase/firebase.conf
 import { useContext } from "react";
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
 const Login = () => {
@@ -54,7 +55,7 @@ const Login = () => {
                         </div>
                         <div className="mt-4 mb-5 group">
                             <button onClick={() => emailLogin(setLoggedinUser, goHistotyPage, inputData.email, inputData.password, seterrMsg)} class="input group btn" type="button">Login</button>
-                            <small>Create a new Account <a href="/signup">Signup</a></small>
+                            <small>Create a new Account <Link to="/signup">Signup</Link></small>
                         </div>
                     </form>
                 </div>
@@ -63,7 +64,7 @@ const Login = () => {
                     <hr />
                     <div onClick={() => socialLoin(googleProvider, setLoggedinUser, goHistotyPage, seterrMsg)} className=" p-1 social-log"><FontAwesomeIcon className="text-warning" size="2x" icon={faGoogle} />{" "}   <h6 style={{ display: "inline", color: "gray" }}>Continue with Google</h6></div>
                     <div onClick={() => socialLoin(facebookProvider, setLoggedinUser, goHistotyPage, seterrMsg)} className=" p-1 social-log"><FontAwesomeIcon className="text-primary" size="2x" icon={faFacebook} />{" "} <h6 style={{ display: "inline", color: "gray" }}>Continue with FaceBook</h6></div>
-                    <div onClick={() => socialLoin(githubProvider, setLoggedinUser, goHistotyPage, seterrMsg)} className=" p-1 social-log"><FontAwesomeIcon className="text-dark" size="2x" icon={faGithub} />{" "} <h6 style={{ display: "inline", color: "gray" }}>Continue with FaceBook</h6></div>
+                    <div onClick={() => socialLoin(githubProvider, setLoggedinUser, goHistotyPage, seterrMsg)} className=" p-1 social-log"><FontAwesomeIcon className="text-dark" size="2x" icon={faGithub} />{" "} <h6 style={{ display: "inline", color: "gray" }}>Continue with Github</h6></div>
                 </div>
             </div>
         </div>

@@ -42,7 +42,7 @@ const NavProfile = (props) => {
                             <h3>Name : {displayName || "Guest"}</h3>
                             <h5>Email: {email || "Guest@gmail.com"}</h5>
                             {emailVerified && <button className="btn-sm btn-primary text-white m-3" type="submit">{emailVerified == true ? <span> <h6>User verified</h6><FontAwesomeIcon size="2x" icon={faShieldAlt} /></span> : "user not verified"}</button>}
-                            {displayName ? <button onClick={onClickHandler} className="btn text-white btn-danger" type="submit">logout</button> : <Link onClick={()=>setLgShow(false)} class="btn-sm btn-primary" to="/login">Login</Link>}
+                            {displayName || emailVerified || email ? <button onClick={onClickHandler} className="btn text-white btn-danger" type="submit">logout</button> : <Link onClick={()=>setLgShow(false)} class="btn-sm btn-primary" to="/login">Login</Link>}
                         </div>
                     </Modal.Title>
                 </Modal.Header>

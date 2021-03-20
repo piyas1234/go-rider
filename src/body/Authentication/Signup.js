@@ -56,22 +56,22 @@ const Signup = () => {
                     <form action="" method="post">
                         <div className="mt-2 group">
                             <label htmlFor="">Name</label>
-                            <input name="name" onMouseLeave={onChangeHandler} onChange={onChangeHandler} class="input" type="text" />
+                            <input name="name" onKeyUp={onChangeHandler} onChange={onChangeHandler} class="input" type="text" />
                              {nameMsg=="okk"?<p className="text-primary"> {nameMsg}</p>:<p className="text-danger"> {nameMsg}</p>}
                         </div>
                         <div className="mt-2 group">
                             <label htmlFor="">UserName or Eamil</label>
-                            <input name="email" onMouseLeave={onChangeHandler} onChange={onChangeHandler} class="input" type="email" />
+                            <input name="email" onKeyUp={onChangeHandler} onChange={onChangeHandler}  class="input" type="email" />
                             {emailMsg=="okk"?<p className="text-primary"> {emailMsg}</p>:<p className="text-danger"> {emailMsg}</p>}
                         </div>
                         <div className="mt-2 group">
                             <label htmlFor="">Password</label>
-                            <input name="password" onMouseLeave={onChangeHandler} onChange={onChangeHandler} class="input" type="text" />
+                            <input name="password" onKeyUp={onChangeHandler} onChange={onChangeHandler} class="input" type="text" />
                             {passwordMsg=="okk"?<p className="text-primary"> {passwordMsg}</p>:<p className="text-danger"> {passwordMsg}</p>}
                         </div>
                         <div className="mt-2 group">
                             <label htmlFor="">Confirm Password</label>
-                            <input name="confirmPassword" onMouseLeave={onChangeHandler} onChange={onChangeHandler} class="input group" type="text" />
+                            <input name="confirmPassword" onKeyUp={onChangeHandler} onChange={onChangeHandler}  class="input group" type="text" />
                             {confirmPasswordMsg=="okk"?<p className="text-primary"> {confirmPasswordMsg}</p>:<p className="text-danger"> {confirmPasswordMsg}</p>}
                         </div>
                         <div className="mt-2 mb-5 group">
@@ -84,7 +84,7 @@ const Signup = () => {
                     <hr />
                     <div onClick={() => socialLoin(googleProvider, setLoggedinUser, goHistotyPage,seterrMsg)} className=" p-1 social-log"><FontAwesomeIcon className="text-warning" size="2x" icon={faGoogle} />{" "}   <h6 style={{ display: "inline", color: "gray" }}>Continue with Google</h6></div>
                     <div onClick={() => socialLoin(facebookProvider, setLoggedinUser, goHistotyPage,seterrMsg)} className=" p-1 social-log"><FontAwesomeIcon className="text-primary" size="2x" icon={faFacebook} />{" "} <h6 style={{ display: "inline", color: "gray" }}>Continue with FaceBook</h6></div>
-                    <div onClick={() => socialLoin(githubProvider, setLoggedinUser, goHistotyPage,seterrMsg)} className=" p-1 social-log"><FontAwesomeIcon className="text-dark" size="2x" icon={faGithub} />{" "} <h6 style={{ display: "inline", color: "gray" }}>Continue with FaceBook</h6></div>
+                    <div onClick={() => socialLoin(githubProvider, setLoggedinUser, goHistotyPage,seterrMsg)} className=" p-1 social-log"><FontAwesomeIcon className="text-dark" size="2x" icon={faGithub} />{" "} <h6 style={{ display: "inline", color: "gray" }}>Continue with Github</h6></div>
                 </div>
             </div>
         </div>

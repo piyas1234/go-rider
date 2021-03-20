@@ -10,11 +10,10 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedinUser, setloggedinUser] = useState({})
-  const [goRider, setgoRider] = useState({})
   const [riderPlace, setriderPlace] = useState({})
 
   return (
-    <UserContext.Provider className="App" value={[loggedinUser, setloggedinUser,goRider, setgoRider,riderPlace, setriderPlace]} > 
+    <UserContext.Provider className="App" value={[loggedinUser, setloggedinUser ,riderPlace, setriderPlace]} > 
     <BrowserRouter>
           <Navbody></Navbody>
           <Navlink></Navlink>

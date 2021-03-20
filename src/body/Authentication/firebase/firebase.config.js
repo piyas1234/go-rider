@@ -52,7 +52,7 @@ export const emailSignup = (setlogin, goHistotyPage, name, email, password,seter
             user.updateProfile({
                 displayName: name,
             }).then(function (data) {
-                
+                console.log(data)
             }).catch(function (error) {
                 console.log(error)
                 const errorMessage = error.message;

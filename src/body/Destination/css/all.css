@@ -20,6 +20,13 @@
     min-height: 400px;
 }
 
+
+.map-div{
+    border: 3px solid gray;
+    box-shadow: 3px 3px 3px 5px rgba(45, 69, 122, 0.514);
+    min-height: 600px;
+}
+
 @media(max-width:800px){
     .map-container{
        margin-top: 50px;

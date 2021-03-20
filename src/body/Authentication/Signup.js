@@ -66,12 +66,12 @@ const Signup = () => {
                         </div>
                         <div className="mt-2 group">
                             <label htmlFor="">Password</label>
-                            <input name="password" onKeyUp={onChangeHandler} onChange={onChangeHandler} class="input" type="text" />
+                            <input name="password" onKeyUp={onChangeHandler} onChange={onChangeHandler} class="input" type="password" />
                             {passwordMsg=="okk"?<p className="text-primary"> {passwordMsg}</p>:<p className="text-danger"> {passwordMsg}</p>}
                         </div>
                         <div className="mt-2 group">
                             <label htmlFor="">Confirm Password</label>
-                            <input name="confirmPassword" onKeyUp={onChangeHandler} onChange={onChangeHandler}  class="input group" type="text" />
+                            <input name="confirmPassword" onKeyUp={onChangeHandler} onChange={onChangeHandler}  class="input group" type="password" />
                             {confirmPasswordMsg=="okk"?<p className="text-primary"> {confirmPasswordMsg}</p>:<p className="text-danger"> {confirmPasswordMsg}</p>}
                         </div>
                         <div className="mt-2 mb-5 group">

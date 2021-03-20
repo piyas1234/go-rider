@@ -4,16 +4,14 @@ import { UserContext } from '../../App'
 import SearchResult from './SearchResult';
 import ReactDOM from 'react-dom'
 import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom'
 import mapboxgl from 'mapbox-gl'
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 mapboxgl.accessToken = 'pk.eyJ1IjoicGl5YXMiLCJhIjoiY2ttaDZldXRvMDRiejJ2bnZ0NTE2eDNzZCJ9.E0KNGKmFzG6LIiP6GLdIWw';
 
 
 const Search = () => {
-    const [mapRender, setmapRender] = useState({
-        lng: 10,
-        lat: 80,
-        zoom: 4
-    })
+    const mapContainer = useRef()
     const [errMsg, seterrMsg] = useState("")
     const [riderPlace, setriderPlace] = useContext(UserContext);
     const { id } = useParams();
@@ -38,15 +36,37 @@ const Search = () => {
 
     }
 
-    const mapContainer = useRef();
     useEffect(() => {
-
-        const map = new mapboxgl.Map({
-            container: mapContainer.current,
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [mapRender.lng, mapRender.lat],
-            zoom: mapRender.zoom
+        navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
+            enableHighAccuracy: true
         })
+
+        function successLocation(position) {
+            setupMap([position.coords.longitude, position.coords.latitude])
+        }
+
+        function errorLocation() {
+            setupMap([-2.24, 53.48])
+        }
+
+
+        function setupMap(center) {
+            const map = new mapboxgl.Map({
+                container: mapContainer.current,
+                style: "mapbox://styles/mapbox/streets-v11",
+                center: center,
+                zoom: 15
+            })
+
+            const nav = new mapboxgl.NavigationControl()
+            map.addControl(nav)
+
+            var directions = new MapboxDirections({
+                accessToken: mapboxgl.accessToken
+            })
+            console.log(directions)
+            map.addControl(directions, "top-left")
+        }
     }, [])
     return (
 
@@ -54,6 +74,7 @@ const Search = () => {
             <div className="row main-row w-75 m-auto">
                 <div id="domChange" className="col-md-5  domChange">
                     <form class="form-container" action="" method="post">
+                    <Link className="btn btn-danger text-white"  to="/map" > go to Real Map</Link>
                     {errMsg && <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <strong>{errMsg}</strong>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -76,6 +97,7 @@ const Search = () => {
                 </div>
                 <div className="col-md-7">
                     <div>
+                        
                         <div className="map-container" ref={mapContainer} style={{ width: "100%", height: "100%" }} />
                     </div>
                 </div>

@@ -10,7 +10,7 @@ import NavProfile from './NavProfile'
 const Navbody = () => {
     const [inputData, setinputData] = useContext(UserContext)
     const { email , emailVerified,displayName} = inputData;
-    
+    const shortName = displayName?displayName.slice(0,5):"";
     return (
         <div>
             <Navbar className="p-3" style={{ backgroundColor: "#B5EAF8",fontFamily: "'Poppins', sans-serif" }} bg="" expand="lg">
@@ -22,7 +22,8 @@ const Navbody = () => {
                         <Nav.Link><Link style={{ textDecoration: 'none' }} to="/destination"><h5 className="text-dark">Destination</h5></Link></Nav.Link>
                         <Nav.Link><Link style={{ textDecoration: 'none' }} to="/about"><h5 className="text-dark">About</h5></Link></Nav.Link>
                         <Nav.Link><Link style={{ textDecoration: 'none' }} to="/blog"><h5 className="text-dark">Blog</h5></Link></Nav.Link>
-                        {email || displayName || emailVerified ?<><h4 className="bg-primary  ml-2 mr-2 p-2" style={{marginBottom:"10px",color:"white",boxShadow: "3px 3px 3px 3px  gray"}}>{displayName.slice(0,5)}</h4> <Nav.Link  ><NavProfile setinputData={setinputData} value={inputData} ></NavProfile></Nav.Link> </> :
+                        <Nav.Link><Link style={{ textDecoration: 'none' }} to="/map"><h5 className="text-dark">Map</h5></Link></Nav.Link>
+                        {email || displayName || emailVerified ?<><h4 className="bg-primary  ml-2 mr-2 p-2" style={{marginBottom:"10px",color:"white",boxShadow: "3px 3px 3px 3px  gray"}}>{shortName}</h4> <Nav.Link  ><NavProfile setinputData={setinputData} value={inputData} ></NavProfile></Nav.Link> </> :
                             <><Nav.Link><Link style={{ textDecoration: 'none' }} to="/login"><h5 style={{ backgroundColor: "tomato" }} className="text-white btn">Login</h5></Link></Nav.Link>
                                 <Nav.Link ><NavProfile setinputData={setinputData} value={inputData} ></NavProfile></Nav.Link>
                             </>

@@ -9,6 +9,7 @@ import Notfound from '../Notfound'
 import PrivateRoute from './PrivateRoute'
 import About from '../About';
 import Blog from '../Blog';
+import Raf from '../Destination/Raf';
 const Navlink = () => {
     return (
         <div>
@@ -18,6 +19,7 @@ const Navlink = () => {
                 <Route exact path="/signup"><Signup></Signup></Route> 
                 <Route exact path="/about"><About></About></Route> 
                 <Route exact path="/blog"><Blog></Blog></Route> 
+                <Route exact path="/map"><Raf></Raf></Route> 
                 <PrivateRoute exact path="/destination"><Search></Search></PrivateRoute> 
                 <PrivateRoute exact path="/destination/:id"><Search></Search></PrivateRoute> 
                 <PrivateRoute exact path="/result"><SearchResult></SearchResult></PrivateRoute> 

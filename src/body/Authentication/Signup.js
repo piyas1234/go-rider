@@ -34,6 +34,13 @@ const Signup = () => {
     }
 
      const {nameMsg,emailMsg,passwordMsg,confirmPasswordMsg} = msg;
+     const onClickHandler = ()=>{
+         if(nameMsg=="okk" && emailMsg=="okk" && passwordMsg=="okk" && confirmPasswordMsg=="okk"){
+            emailSignup(setLoggedinUser, goHistotyPage, inputData.name, inputData.email, inputData.password,seterrMsg)
+         }else{
+             seterrMsg("please fill all the Fields")
+         }
+     }
      console.log(msg)
     return (
         <div>
@@ -68,7 +75,7 @@ const Signup = () => {
                             {confirmPasswordMsg=="okk"?<p className="text-primary"> {confirmPasswordMsg}</p>:<p className="text-danger"> {confirmPasswordMsg}</p>}
                         </div>
                         <div className="mt-2 mb-5 group">
-                            <button onClick={() => emailSignup(setLoggedinUser, goHistotyPage, inputData.name, inputData.email, inputData.password,seterrMsg)} class="input group btn" type="button">signUp</button>
+                            <button onClick={onClickHandler} class="input group btn" type="button">signUp</button>
                         </div>
                     </form>
                 </div>

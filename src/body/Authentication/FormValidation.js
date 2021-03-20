@@ -9,7 +9,7 @@ export const FromValidator = (inputData, msg, setmsg) => {
 
     const nameMsg = name == "" ? "Fill the Fields" : name.length < 5 ? "Name should least 5 chars!" : "okk";
     const emailMsg = email == "" ? "fill the Field" : email.length < 5 ? "Email should least 5 chars!" : emailresult == false ? "Please Provide a valid Email" : "okk";
-    const passwordMsg = password == "" ? "fill the Field" : password.length < 6 ? "password should be more Than 5!!" : passwordresult == false ? "Please enter a valid password(1-9,A-z,#&)*2" : "okk";
+    const passwordMsg = password == "" ? "fill the Field" : password.length < 6 ? "password should be more Than 5!!" : passwordresult == false ? "Please enter a valid password(1-9,A-z,#&)*2 in 15 chars" : "okk";
     const confirmPasswordMsg = confirmPassword !== password ? "Password Don't Match" : "okk";
     setmsg({ nameMsg, emailMsg, passwordMsg, confirmPasswordMsg })
 

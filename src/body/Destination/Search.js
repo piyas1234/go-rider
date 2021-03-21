@@ -68,19 +68,20 @@ const Search = () => {
             map.addControl(directions, "top-left")
         }
     }, [])
+
     return (
 
         <div className="main">
             <div className="row main-row w-75 m-auto">
                 <div id="domChange" className="col-md-5  domChange">
                     <form class="form-container" action="" method="post">
-                    <Link className="btn btn-danger text-white"  to="/map" > go to Real Map</Link>
-                    {errMsg && <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>{errMsg}</strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>}
+                        <Link className="btn btn-primary card text-primary mb-2" to="/map" > go to Real Map</Link>
+                        {errMsg && <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>{errMsg}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>}
                         <div>
                             <label htmlFor="">Pick from</label>
                             <input class="form-control" onChange={onChangeHandler} name="pickfrom" type="text" />
@@ -97,7 +98,7 @@ const Search = () => {
                 </div>
                 <div className="col-md-7">
                     <div>
-                        
+
                         <div className="map-container" ref={mapContainer} style={{ width: "100%", height: "100%" }} />
                     </div>
                 </div>

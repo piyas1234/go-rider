@@ -33,6 +33,7 @@ const Login = () => {
         setinputData({ ...inputData, [name]: value })
 
     }
+    const { email, password } = inputData;
     return (
         <div>
             <div className="col-md-6 offset-md-3">
@@ -54,7 +55,7 @@ const Login = () => {
                             <input onChange={onChangeHandler} name="password" class="input" type="password" />
                         </div>
                         <div className="mt-4 mb-5 group">
-                            <button onClick={() => emailLogin(setLoggedinUser, goHistotyPage, inputData.email, inputData.password, seterrMsg)} class="input group btn" type="button">Login</button>
+                            <button onClick={() => emailLogin(setLoggedinUser, goHistotyPage, email, password, seterrMsg)} class="input group btn" type="button">Login</button>
                             <small>Create a new Account <Link to="/signup">Signup</Link></small>
                         </div>
                     </form>

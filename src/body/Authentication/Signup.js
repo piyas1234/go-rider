@@ -34,9 +34,11 @@ const Signup = () => {
     }
 
      const {nameMsg,emailMsg,passwordMsg,confirmPasswordMsg} = msg;
+     const {name,email,password} = inputData;
+
      const onClickHandler = ()=>{
          if(nameMsg=="okk" && emailMsg=="okk" && passwordMsg=="okk" && confirmPasswordMsg=="okk"){
-            emailSignup(setLoggedinUser, goHistotyPage, inputData.name, inputData.email, inputData.password,seterrMsg)
+            emailSignup(setLoggedinUser, goHistotyPage, name, email,password,seterrMsg)
          }else{
              seterrMsg("please fill all the Fields")
          }

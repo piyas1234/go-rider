@@ -16,7 +16,7 @@ const NavProfile = (props) => {
 
     return (
         <>
-            <div onClick={
+            <div className="ml-2" onClick={
                 () => setLgShow(true)}>{photoURL ?
                     <img style={{
                         width: "60px",

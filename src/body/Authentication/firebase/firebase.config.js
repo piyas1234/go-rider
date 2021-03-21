@@ -19,6 +19,7 @@ export const socialLoin = (provider, setlogin, goHistotyPage,seterrMsg) => {
             const credential = result.credential;
             const token = credential.accessToken;
             const user = result.user;
+            console.log(user)
             setlogin(user)
             goHistotyPage()
         }).catch((error) => {
@@ -46,7 +47,7 @@ export const emailLogin = (setlogin, goHistotyPage, email, password,seterrMsg) =
 export const emailSignup = (setlogin, goHistotyPage, name, email, password,seterrMsg) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            const user = userCredential.user;
+            var user = userCredential.user;
             setlogin(user)
             goHistotyPage()
             user.updateProfile({

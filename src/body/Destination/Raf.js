@@ -41,7 +41,7 @@ const Raf = () => {
     }, [])
 
     return (
-        <div>
+        <div style={{backgroundColor:"#75CFF0",minHeight:"700px"}}>
             <div>
                 <div className="map-div" ref={mapContainer} style={{ width: "100%", height: "100%" }} />
             </div>

@@ -8,19 +8,27 @@ import train from '../Image/Group.png'
     {
         id: 1,
         name: "Bike",
-        img: bike
+        img: bike,
+        seat:2,
+        price:60
     }, {
         id: 2,
         name: "Car",
-        img: car
+        img: car,
+        seat:4,
+        price:120
     }, {
         id: 3,
         name: "bus",
-        img: bus
+        img: bus,
+        seat:40,
+        price:70
     }, {
         id: 4,
         name: "Train",
-        img: train
+        img: train,
+        seat:200,
+        price:40
     }
 
 

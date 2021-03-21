@@ -2,8 +2,8 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div  style={{backgroundColor:"#B5EAF8",minHeight:"800px",fontFamily:"'Poppins', sans-serif"}}>
-            <h2 style={{textShadow:"2px 2px 2px gray",width:"200px",margin:"auto"}} className="text-center text-white p-2 bg-primary rounded"> Blog </h2>
+        <div  style={{ minHeight:"800px",fontFamily:"'Poppins', sans-serif"}}>
+            <h2 style={{textShadow:"2px 2px 2px gray", margin:"auto",width:'200px'}} className="text-center text-primary p-2 card rounded"> Blog </h2>
             <hr/>
             <div className="m-5">
                 <div className="row">
